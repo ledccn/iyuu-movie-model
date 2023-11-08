@@ -1,0 +1,21 @@
+{
+  "name": "iyuu/movie-model",
+  "type": "library",
+  "license": "MIT",
+  "description": "Webman plugin iyuu/movie ThinkPHP model",
+  "autoload": {
+    "psr-4": {
+      "Iyuu\\MovieModel\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "david",
+      "email": "nz1985@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "topthink/think-orm": "^3.0"
+  }
+}
