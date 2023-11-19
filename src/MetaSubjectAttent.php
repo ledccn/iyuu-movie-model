@@ -2,6 +2,7 @@
 
 namespace Iyuu\MovieModel;
 
+use think\db\Query;
 use think\Model;
 
 /**
@@ -15,6 +16,8 @@ use think\Model;
  */
 class MetaSubjectAttent extends Model
 {
+    use HasSubject;
+
     /**
      * The table associated with the model.
      *
@@ -29,5 +32,28 @@ class MetaSubjectAttent extends Model
      */
     protected $pk = 'id';
 
+    /**
+     * 数据库约束：联合唯一
+     * @param int $user_id
+     * @param int $subject_id
+     * @return array
+     */
+    public static function uniqueWhere(int $user_id, int $subject_id): array
+    {
+        return [
+            'user_id' => $user_id,
+            'subject_id' => $subject_id
+        ];
+    }
 
+    /**
+     * 联合唯一查询
+     * @param int $user_id
+     * @param int $subject_id
+     * @return static|Query
+     */
+    public static function uniqueQuery(int $user_id, int $subject_id): static|Query
+    {
+        return static::where(self::uniqueWhere($user_id, $subject_id));
+    }
 }
