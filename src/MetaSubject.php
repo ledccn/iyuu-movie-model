@@ -7,6 +7,7 @@ use think\db\exception\DataNotFoundException;
 use think\db\exception\DbException;
 use think\db\exception\ModelNotFoundException;
 use think\Model;
+use think\model\relation\HasOne;
 
 /**
  * meta_subject 影视条目
@@ -99,6 +100,15 @@ class MetaSubject extends Model
     public function getAkaAttr(string $value): array
     {
         return MetaTitle::getTitleArray($value);
+    }
+
+    /**
+     * 用户追剧对象【一对一关联】
+     * @return HasOne
+     */
+    public function attent(): HasOne
+    {
+        return $this->hasOne(MetaSubjectAttent::class, 'subject_id', 'id');
     }
 
     /**
