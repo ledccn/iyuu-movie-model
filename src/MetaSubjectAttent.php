@@ -6,7 +6,7 @@ use think\db\Query;
 use think\Model;
 
 /**
- * meta_subject_attent 追剧表
+ * 追剧表
  * @property integer $id 主键(主键)
  * @property integer $user_id 用户ID
  * @property integer $subject_id 条目ID
