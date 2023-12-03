@@ -2,6 +2,7 @@
 
 namespace Iyuu\MovieModel;
 
+use think\db\Query;
 use think\Model;
 
 /**
@@ -61,5 +62,17 @@ class MetaTitle extends Model
             $ids = explode(',', $ids);
         }
         return self::whereIn('title_id', $ids)->column('title');
+    }
+
+    /**
+     * 搜索器
+     * @param Query $query
+     * @param string $value
+     * @param array $data
+     * @return void
+     */
+    public function searchTitleAttr(Query $query, string $value, array $data): void
+    {
+        $query->where('title', 'like', '%' . $value . '%');
     }
 }
