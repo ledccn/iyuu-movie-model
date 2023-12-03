@@ -5,7 +5,7 @@ namespace Iyuu\MovieModel;
 use think\Model;
 
 /**
- * 种子条目关系
+ * pt_subject_relation 种子条目关系
  * @property integer $id 主键(主键)
  * @property integer $subject_id 条目PK
  * @property integer $pt_tid 种子PK
@@ -26,4 +26,6 @@ class PtSubjectRelation extends Model
      * @var string
      */
     protected $pk = 'id';
+
+    
 }

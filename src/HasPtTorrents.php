@@ -2,8 +2,6 @@
 
 namespace Iyuu\MovieModel;
 
-use think\Model;
-
 /**
  * pt_torrents 种子表
  * @property integer $id 主键(主键)
@@ -22,21 +20,6 @@ use think\Model;
  * @property string $create_time 创建时间
  * @property string $update_time 更新时间
  */
-class PtTorrents extends Model
+trait HasPtTorrents
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'pt_torrents';
-
-    /**
-     * The primary key associated with the table.
-     *
-     * @var string
-     */
-    protected $pk = 'id';
-
-    
 }

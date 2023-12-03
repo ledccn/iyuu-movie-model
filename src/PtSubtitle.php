@@ -5,7 +5,7 @@ namespace Iyuu\MovieModel;
 use think\Model;
 
 /**
- * PT副标题
+ * pt_subtitle PT副标题
  * @property integer $subtitle_id 主键(主键)
  * @property mixed $sha1 散列
  * @property string $subtitle 副标题
@@ -26,4 +26,6 @@ class PtSubtitle extends Model
      * @var string
      */
     protected $pk = 'subtitle_id';
+
+    
 }

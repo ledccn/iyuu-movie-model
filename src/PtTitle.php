@@ -5,7 +5,7 @@ namespace Iyuu\MovieModel;
 use think\Model;
 
 /**
- * PT主标题
+ * pt_title PT主标题
  * @property integer $title_id 主键(主键)
  * @property mixed $sha1 散列
  * @property string $title 主标题
@@ -26,4 +26,6 @@ class PtTitle extends Model
      * @var string
      */
     protected $pk = 'title_id';
+
+    
 }
