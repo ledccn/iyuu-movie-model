@@ -2,6 +2,7 @@
 
 namespace Iyuu\MovieModel;
 
+use think\db\Query;
 use think\Model;
 
 /**
@@ -61,5 +62,17 @@ class MetaName extends Model
             $ids = explode(',', $ids);
         }
         return self::whereIn('name_id', $ids)->column('name');
+    }
+
+    /**
+     * 搜索器
+     * @param Query $query
+     * @param string $value
+     * @param array $data
+     * @return void
+     */
+    public function searchNameAttr(Query $query, string $value, array $data): void
+    {
+        $query->where('name', 'like', '%' . $value . '%');
     }
 }
